@@ -30,8 +30,8 @@ currentTime=$temp
 if [ `bc -l <<< "$currentTime > $add_period"` -eq 1 ] && [ `bc -l <<< "$vm < $maxVM"` -eq 1 ]
 
 then
-        echo "We are adding 1 VM"
-        coolingTime=`expr $currentTime + 208`
+        echo "We are adding 1 VM"  #action line, add 1 VM
+        coolingTime=`expr $currentTime + 300`
         echo "VM number previous : $vm"
         vmNumber=`expr $vm + 1`
        
@@ -58,8 +58,8 @@ echo "Current time : $currentTime"
 if [ `bc -l <<< "$currentTime > $remove_period"` -eq 1 ] && [ `bc -l <<< "$redrt > $resTime"` -eq 1 ] && [ `bc -l <<< "$workInc < $decWork"` -eq 1 ] && [ `bc -l <<< "$minVM < $vm"` -eq 1 ]
 then
              
-             echo "We are aremoving 1 VM"
-             coolingTime=`expr $currentTime + 208`
+             echo "We are aremoving 1 VM"   #action line, remove 1 VM
+             coolingTime=`expr $currentTime + 300`
 
 
              echo -e "VM number previous : $vm"

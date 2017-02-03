@@ -34,7 +34,7 @@ currentTime=$(date +%s)
 if [ `bc -l <<< "$current_rt > $rt_setpoint"` -eq 1 ] && [ `bc -l <<< "$currentTime > $add_period"` -eq 1 ] && [ `bc -l <<< "$vm < $maxVM"` -eq 1 ]
               then
                   echo "We are adding 1 VM"  #action line, add 1 VM
-                  coolingTime=`expr $currentTime + 208000`
+                  coolingTime=`expr $currentTime + 300000`
                   echo "VM number previous : $vm"
                   vmNumber=`expr $vm + 1`
        
@@ -51,7 +51,7 @@ elif [ `bc -l <<< "$current_rt < $threshold"` -eq 1 ] && [ `bc -l <<< "$currentT
               then
              
                       echo "We are aremoving 1 VM"   #action line, remove 1 VM
-                      coolingTime=`expr $currentTime + 208000`
+                      coolingTime=`expr $currentTime + 300000`
                       echo  "VM number previous : $vm"
                       vmNumber=`expr $vm - 1`
                       
